@@ -20,4 +20,4 @@ jobs:
         xcode-version: '12.4.0'
       
     - name: Build and Test
-      run:  xcodebuild test -project gu.xcodeproj -scheme gu -destination "platform=iOS Simulator, OS=14.4, name=iPhone 11 Pro" build test
+      run:  xcodebuild test -project gu.xcodeproj -scheme gu -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4' build test
