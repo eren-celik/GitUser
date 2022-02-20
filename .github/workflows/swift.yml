@@ -19,4 +19,4 @@ jobs:
         xcode-version: '12.4.0'
       
     - name: Run unit tests
-      run: xcodebuild test -scheme gu -workspace gu.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2' | xcpretty && exit ${PIPESTATUS[0]}
+      run:  xcodebuild test -scheme gu -workspace gu.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 11,OS=14'
