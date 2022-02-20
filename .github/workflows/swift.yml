@@ -13,10 +13,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    
-    - uses: maxim-lobanov/setup-xcode@v1.4.1
-      with:
-        xcode-version: '12.4.0'
       
-    - name: Run tests
-      run: xcodebuild clean build test -workspace App/QuizApp.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.2.app && /usr/bin/xcodebuild -version
+      
+    - name: Run unit tests
+      run: xcodebuild test -scheme gu -workspace gu.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2' | xcpretty && exit ${PIPESTATUS[0]}
