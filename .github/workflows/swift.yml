@@ -2,18 +2,20 @@ name: CI
 
 on:
   push:
-    branches: [ master, 'develop'  ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, 'develop'  ]
+    branches: [ master ]
 
 jobs:
-  build:
+  build-and-test:
 
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
+    
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.app
+      
     - name: Run tests
-      run: xcodebuild -scheme gu test -destination "platform=iOS Simulator,name=iPhone 11"
+      run: xcodebuild clean build test -workspace App/QuizApp.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
