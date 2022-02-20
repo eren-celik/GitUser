@@ -1,3 +1,3 @@
-[![ci](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/ci.yml/badge.svg)]
+[![ci](https://github.com/eren-celik/GitUser/actions/workflows/ci.yml/badge.svg)]
 
 # GitUser
