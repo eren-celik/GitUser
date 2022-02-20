@@ -2,14 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches:
+    - master
   pull_request:
-    branches: [ master ]
+    branches:
+    - master
 
 jobs:
   build-and-test:
 
-    runs-on: macos-latest
+    runs-on: macos-11.6
     
     steps:
     - uses: actions/checkout@v2
