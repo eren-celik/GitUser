@@ -10,12 +10,13 @@ jobs:
   build-and-test:
 
     runs-on: macos-latest
-
+    
     steps:
     - uses: actions/checkout@v2
     
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_12.app
+    - uses: maxim-lobanov/setup-xcode@v1.4.1
+      with:
+        xcode-version: '12.0'
       
     - name: Run tests
       run: xcodebuild clean build test -workspace App/QuizApp.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
