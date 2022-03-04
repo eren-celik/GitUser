@@ -15,11 +15,17 @@
 		108C745727D2AEEF0038AE39 /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C745627D2AEEF0038AE39 /* MainViewController+TableView.swift */; };
 		108C745D27D2B00C0038AE39 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C745B27D2B00C0038AE39 /* UserCell.swift */; };
 		108C745E27D2B00C0038AE39 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108C745C27D2B00C0038AE39 /* UserCell.xib */; };
+		108C746E27D2B3F00038AE39 /* GitUsers+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C746D27D2B3F00038AE39 /* GitUsers+Model.swift */; };
+		108C747327D2B46F0038AE39 /* Network+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C747227D2B46F0038AE39 /* Network+Provider.swift */; };
+		108C747927D2B4EA0038AE39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C747827D2B4EA0038AE39 /* Constants.swift */; };
+		108C747F27D2B6140038AE39 /* Network+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C747E27D2B6140038AE39 /* Network+Manager.swift */; };
+		108C748327D2B9980038AE39 /* Network+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C748227D2B9980038AE39 /* Network+Contracts.swift */; };
 		109B1F5E27C285870073F60D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F5D27C285870073F60D /* AppDelegate.swift */; };
 		109B1F6227C285870073F60D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F6127C285870073F60D /* MainViewController.swift */; };
 		109B1F6727C285880073F60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6627C285880073F60D /* Assets.xcassets */; };
 		109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6827C285880073F60D /* LaunchScreen.storyboard */; };
 		109B1F7927C285980073F60D /* guTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F7827C285980073F60D /* guTests.swift */; };
+		10FC2A3727D2CCED00344FF0 /* git_users_mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 10FC2A3627D2CCED00344FF0 /* git_users_mock.json */; };
 		2C6B8A715171D301015891B1 /* Pods_gu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26C5DF3A2DB3F29B06ADEBD /* Pods_gu.framework */; };
 		B58E1FF88912E1BDAC8B9DDB /* Pods_guTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F3B4005CF71307D2505B6 /* Pods_guTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +50,11 @@
 		108C745627D2AEEF0038AE39 /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
 		108C745B27D2B00C0038AE39 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		108C745C27D2B00C0038AE39 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		108C746D27D2B3F00038AE39 /* GitUsers+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitUsers+Model.swift"; sourceTree = "<group>"; };
+		108C747227D2B46F0038AE39 /* Network+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Provider.swift"; sourceTree = "<group>"; };
+		108C747827D2B4EA0038AE39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		108C747E27D2B6140038AE39 /* Network+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Manager.swift"; sourceTree = "<group>"; };
+		108C748227D2B9980038AE39 /* Network+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Contracts.swift"; sourceTree = "<group>"; };
 		109B1F5A27C285870073F60D /* gu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109B1F5D27C285870073F60D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		109B1F6127C285870073F60D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +64,7 @@
 		109B1F7627C285980073F60D /* guTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = guTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		109B1F7827C285980073F60D /* guTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guTests.swift; sourceTree = "<group>"; };
 		109B1F7A27C285980073F60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10FC2A3627D2CCED00344FF0 /* git_users_mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = git_users_mock.json; sourceTree = "<group>"; };
 		369B1438131A05ED3076C318 /* Pods-guTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guTests.debug.xcconfig"; path = "Target Support Files/Pods-guTests/Pods-guTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B59F3B4005CF71307D2505B6 /* Pods_guTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C859928D18D006519D43A698 /* Pods-guTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guTests.release.xcconfig"; path = "Target Support Files/Pods-guTests/Pods-guTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +158,50 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		108C746A27D2B3AE0038AE39 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				108C747127D2B44B0038AE39 /* Manager */,
+				108C746B27D2B3BE0038AE39 /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		108C746B27D2B3BE0038AE39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				108C746D27D2B3F00038AE39 /* GitUsers+Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		108C747127D2B44B0038AE39 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				108C747227D2B46F0038AE39 /* Network+Provider.swift */,
+				108C747E27D2B6140038AE39 /* Network+Manager.swift */,
+				108C748227D2B9980038AE39 /* Network+Contracts.swift */,
+				10FC2A3627D2CCED00344FF0 /* git_users_mock.json */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		108C747627D2B4D30038AE39 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				108C747727D2B4DF0038AE39 /* Utilites */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		108C747727D2B4DF0038AE39 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				108C747827D2B4EA0038AE39 /* Constants.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
 		109B1F5127C285870073F60D = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				108C742F27D299680038AE39 /* App */,
+				108C747627D2B4D30038AE39 /* Common */,
+				108C746A27D2B3AE0038AE39 /* Network */,
 				108C743027D2996D0038AE39 /* Scenes */,
 				108C742E27D299560038AE39 /* Source */,
 			);
@@ -291,6 +349,7 @@
 				108C745E27D2B00C0038AE39 /* UserCell.xib in Resources */,
 				109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */,
 				108C743927D29A400038AE39 /* MainViewController.storyboard in Resources */,
+				10FC2A3727D2CCED00344FF0 /* git_users_mock.json in Resources */,
 				109B1F6727C285880073F60D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,11 +432,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108C748327D2B9980038AE39 /* Network+Contracts.swift in Sources */,
 				108C745D27D2B00C0038AE39 /* UserCell.swift in Sources */,
+				108C747927D2B4EA0038AE39 /* Constants.swift in Sources */,
 				108C745227D2AB930038AE39 /* Coordinator+Protocols.swift in Sources */,
 				109B1F6227C285870073F60D /* MainViewController.swift in Sources */,
 				108C745727D2AEEF0038AE39 /* MainViewController+TableView.swift in Sources */,
 				109B1F5E27C285870073F60D /* AppDelegate.swift in Sources */,
+				108C747327D2B46F0038AE39 /* Network+Provider.swift in Sources */,
+				108C746E27D2B3F00038AE39 /* GitUsers+Model.swift in Sources */,
+				108C747F27D2B6140038AE39 /* Network+Manager.swift in Sources */,
 				108C743527D299CA0038AE39 /* Coordinator.swift in Sources */,
 				108C744E27D2AB600038AE39 /* MainView+Coordinator.swift in Sources */,
 				108C744727D2A0520038AE39 /* Storyboarded.swift in Sources */,
