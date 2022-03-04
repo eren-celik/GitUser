@@ -51,27 +51,7 @@ extension GuAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .users:
-            return DataFixtures.validUserListData
+            return MockData.validUsersData
         }
-    }
-}
-
-class DataFixtures {
-    
-    static var validUserListData: Data { return jsonData("git_users_mock") }
-
-    private static func jsonData(_ filename: String) -> Data {
-        
-        if let filepath = Bundle.main.path(forResource: filename, ofType: "json") {
-            do {
-                let contents = try String(contentsOfFile: filepath, encoding: .utf8)
-                return contents.data(using: .utf8) ?? Data()
-            } catch {
-                print("null")
-            }
-        } else {
-            print("nullda")
-        }
-        return Data()
     }
 }
