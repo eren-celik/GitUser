@@ -15,9 +15,24 @@
                     <view key="view" contentMode="scaleToFill" id="TMk-pV-yjE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B65-bL-8Q4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="R7A-xh-hAB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R7A-xh-hAB" firstAttribute="trailing" secondItem="B65-bL-8Q4" secondAttribute="trailing" id="cn1-kw-Q1N"/>
+                            <constraint firstItem="B65-bL-8Q4" firstAttribute="top" secondItem="R7A-xh-hAB" secondAttribute="top" id="j98-Kx-ZcV"/>
+                            <constraint firstAttribute="bottom" secondItem="B65-bL-8Q4" secondAttribute="bottom" id="yvg-at-4vG"/>
+                            <constraint firstItem="B65-bL-8Q4" firstAttribute="leading" secondItem="R7A-xh-hAB" secondAttribute="leading" id="zla-Hp-BZl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="B65-bL-8Q4" id="Syv-AH-8AC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSZ-W5-DRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
