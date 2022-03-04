@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		109B1F5E27C285870073F60D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F5D27C285870073F60D /* AppDelegate.swift */; };
-		109B1F6027C285870073F60D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F5F27C285870073F60D /* SceneDelegate.swift */; };
-		109B1F6227C285870073F60D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F6127C285870073F60D /* ViewController.swift */; };
-		109B1F6527C285870073F60D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6327C285870073F60D /* Main.storyboard */; };
+		109B1F6227C285870073F60D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F6127C285870073F60D /* MainViewController.swift */; };
 		109B1F6727C285880073F60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6627C285880073F60D /* Assets.xcassets */; };
 		109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6827C285880073F60D /* LaunchScreen.storyboard */; };
 		109B1F7927C285980073F60D /* guTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F7827C285980073F60D /* guTests.swift */; };
@@ -32,9 +30,7 @@
 		0D2762E933D12B0CD2A93293 /* Pods-gu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gu.release.xcconfig"; path = "Target Support Files/Pods-gu/Pods-gu.release.xcconfig"; sourceTree = "<group>"; };
 		109B1F5A27C285870073F60D /* gu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109B1F5D27C285870073F60D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		109B1F5F27C285870073F60D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		109B1F6127C285870073F60D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		109B1F6427C285870073F60D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		109B1F6127C285870073F60D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		109B1F6627C285880073F60D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		109B1F6927C285880073F60D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		109B1F6B27C285880073F60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +64,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		108C742E27D299560038AE39 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				109B1F6627C285880073F60D /* Assets.xcassets */,
+				109B1F6827C285880073F60D /* LaunchScreen.storyboard */,
+				109B1F6B27C285880073F60D /* Info.plist */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		108C742F27D299680038AE39 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				109B1F5D27C285870073F60D /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		108C743027D2996D0038AE39 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				109B1F6127C285870073F60D /* MainViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		109B1F5127C285870073F60D = {
 			isa = PBXGroup;
 			children = (
@@ -91,13 +113,9 @@
 		109B1F5C27C285870073F60D /* gu */ = {
 			isa = PBXGroup;
 			children = (
-				109B1F5D27C285870073F60D /* AppDelegate.swift */,
-				109B1F5F27C285870073F60D /* SceneDelegate.swift */,
-				109B1F6127C285870073F60D /* ViewController.swift */,
-				109B1F6327C285870073F60D /* Main.storyboard */,
-				109B1F6627C285880073F60D /* Assets.xcassets */,
-				109B1F6827C285880073F60D /* LaunchScreen.storyboard */,
-				109B1F6B27C285880073F60D /* Info.plist */,
+				108C742F27D299680038AE39 /* App */,
+				108C743027D2996D0038AE39 /* Scenes */,
+				108C742E27D299560038AE39 /* Source */,
 			);
 			path = gu;
 			sourceTree = "<group>";
@@ -128,7 +146,6 @@
 				369B1438131A05ED3076C318 /* Pods-guTests.debug.xcconfig */,
 				C859928D18D006519D43A698 /* Pods-guTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,7 +234,6 @@
 			files = (
 				109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */,
 				109B1F6727C285880073F60D /* Assets.xcassets in Resources */,
-				109B1F6527C285870073F60D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				109B1F6227C285870073F60D /* ViewController.swift in Sources */,
+				109B1F6227C285870073F60D /* MainViewController.swift in Sources */,
 				109B1F5E27C285870073F60D /* AppDelegate.swift in Sources */,
-				109B1F6027C285870073F60D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,14 +339,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		109B1F6327C285870073F60D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				109B1F6427C285870073F60D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		109B1F6827C285880073F60D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -467,7 +474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ59FP3TJ;
-				INFOPLIST_FILE = gu/Info.plist;
+				INFOPLIST_FILE = gu/Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,7 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ59FP3TJ;
-				INFOPLIST_FILE = gu/Info.plist;
+				INFOPLIST_FILE = gu/Source/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
