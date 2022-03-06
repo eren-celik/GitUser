@@ -673,6 +673,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ59FP3TJ;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Alamofire/Alamofire.framework/Headers\" \"${SRCROOT}/Pods/Moya/Moya.framework/Headers\" \"${SRCROOT}/Pods/SDWebImage/SDWebImage.framework/Headers\"";
 				INFOPLIST_FILE = guTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,6 +695,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ59FP3TJ;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Alamofire/Alamofire.framework/Headers\" \"${SRCROOT}/Pods/Moya/Moya.framework/Headers\" \"${SRCROOT}/Pods/SDWebImage/SDWebImage.framework/Headers\"";
 				INFOPLIST_FILE = guTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
