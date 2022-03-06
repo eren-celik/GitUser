@@ -10,37 +10,14 @@ import Alamofire
 
 protocol NetworkLayerProtocol {
     
-    var provider: MoyaProvider<GuAPI> { get }
+    associatedtype T: TargetType
+    var provider: MoyaProvider<T> { get }
     
-    func getUsers(perPage: Int, completion: @escaping (Result<GitUsers, Error>) -> Void)
+    func getUsers(perPage: Int, completion: @escaping (Result<GitUsers, GUNetworkErrors>) -> Void)
 }
 
 protocol NetworkRequestProtocol: AnyObject {
-    associatedtype TargetType
+    associatedtype Target: TargetType
     
-    func request<T: Decodable>(target: TargetType, completion: @escaping (Result<T, Error>) -> Void)
-}
-
-extension NetworkRequestProtocol where Self: NetworkLayerProtocol {
-    
-    internal func request<T: Decodable>(target: GuAPI, completion: @escaping (Result<T, Error>) -> Void) {
-        provider.request(target) { (result) in
-            switch result {
-            case .success(let response):
-                guard response.statusCode >= 200 && response.statusCode <= 300 else {
-                    completion(.failure(NSError(domain: "com", code: response.statusCode, userInfo: [:])))
-                    return
-                }
-                do {
-                    let result = try JSONDecoder().decode(T.self, from: response.data)
-                    completion(.success(result))
-                }catch let error {
-                    completion(.failure(error))
-                }
-                break
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
+    func request<T: Decodable>(target: Target, completion: @escaping (Result<T, GUNetworkErrors>) -> Void)
 }
