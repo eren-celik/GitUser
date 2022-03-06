@@ -9,7 +9,7 @@ target 'gu' do
   pod 'Moya', '~> 15.0'
 
   target 'guTests' do
-    inherit! :complete
+    inherit! :search_paths
     # Pods for testing
   end
 
