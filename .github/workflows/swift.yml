@@ -22,4 +22,4 @@ jobs:
       run: pod install
       
     - name: Build and Test
-      run:  xcodebuild test -project gu.xcworkspace -scheme gu -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4' build test
+      run:  xcodebuild test -workspace gu.xcworkspace -scheme gu -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4' build test
