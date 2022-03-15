@@ -24,6 +24,9 @@
 		109B1F6227C285870073F60D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B1F6127C285870073F60D /* MainViewController.swift */; };
 		109B1F6727C285880073F60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6627C285880073F60D /* Assets.xcassets */; };
 		109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6827C285880073F60D /* LaunchScreen.storyboard */; };
+		10B013BE27D54237002398D8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B013BD27D54237002398D8 /* DetailViewController.swift */; };
+		10B013C427D54249002398D8 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B013C327D54249002398D8 /* DetailViewController.storyboard */; };
+		10B013CA27D5428D002398D8 /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B013C927D5428D002398D8 /* DetailViewCoordinator.swift */; };
 		10CC3E3227D4149B004FD09B /* Network+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC3E3127D4149B004FD09B /* Network+Test.swift */; };
 		10CC3E4227D41A5C004FD09B /* Mock+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC3E4127D41A5C004FD09B /* Mock+Endpoints.swift */; };
 		10FC2A3727D2CCED00344FF0 /* git_users_mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 10FC2A3627D2CCED00344FF0 /* git_users_mock.json */; };
@@ -65,6 +68,9 @@
 		109B1F6B27C285880073F60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		109B1F7627C285980073F60D /* guTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = guTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		109B1F7A27C285980073F60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10B013BD27D54237002398D8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		10B013C327D54249002398D8 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		10B013C927D5428D002398D8 /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 		10CC3E3127D4149B004FD09B /* Network+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Test.swift"; sourceTree = "<group>"; };
 		10CC3E4127D41A5C004FD09B /* Mock+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock+Endpoints.swift"; sourceTree = "<group>"; };
 		10FC2A3627D2CCED00344FF0 /* git_users_mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = git_users_mock.json; sourceTree = "<group>"; };
@@ -96,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107E08B827E1312D0089EC85 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				108C744D27D2AB600038AE39 /* MainView+Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		107E08B927E131380089EC85 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				108C743827D29A400038AE39 /* MainViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		108C742E27D299560038AE39 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +140,7 @@
 		108C743027D2996D0038AE39 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				10B013BC27D5421B002398D8 /* DetailView */,
 				108C744C27D2AB4F0038AE39 /* MainView */,
 			);
 			path = Scenes;
@@ -136,10 +159,10 @@
 		108C744C27D2AB4F0038AE39 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				107E08B927E131380089EC85 /* Storyboard */,
 				108C745A27D2AFFF0038AE39 /* Cell */,
+				107E08B827E1312D0089EC85 /* Coordinator */,
 				108C745527D2AEDD0038AE39 /* View */,
-				108C743827D29A400038AE39 /* MainViewController.storyboard */,
-				108C744D27D2AB600038AE39 /* MainView+Coordinator.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -246,6 +269,32 @@
 				109B1F7A27C285980073F60D /* Info.plist */,
 			);
 			path = guTests;
+			sourceTree = "<group>";
+		};
+		10B013BC27D5421B002398D8 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				10B013C827D5427F002398D8 /* Coordinator */,
+				10B013C727D54271002398D8 /* View */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		10B013C727D54271002398D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10B013BD27D54237002398D8 /* DetailViewController.swift */,
+				10B013C327D54249002398D8 /* DetailViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10B013C827D5427F002398D8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				10B013C927D5428D002398D8 /* DetailViewCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		10CC3E2627D41274004FD09B /* Mock+Helper */ = {
@@ -378,6 +427,7 @@
 			files = (
 				108C745E27D2B00C0038AE39 /* UserCell.xib in Resources */,
 				109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */,
+				10B013C427D54249002398D8 /* DetailViewController.storyboard in Resources */,
 				108C743927D29A400038AE39 /* MainViewController.storyboard in Resources */,
 				10FC2A3727D2CCED00344FF0 /* git_users_mock.json in Resources */,
 				109B1F6727C285880073F60D /* Assets.xcassets in Resources */,
@@ -470,11 +520,13 @@
 				108C745727D2AEEF0038AE39 /* MainViewController+TableView.swift in Sources */,
 				109B1F5E27C285870073F60D /* AppDelegate.swift in Sources */,
 				108C747327D2B46F0038AE39 /* Network+Provider.swift in Sources */,
+				10B013CA27D5428D002398D8 /* DetailViewCoordinator.swift in Sources */,
 				108C746E27D2B3F00038AE39 /* GitUsers+Model.swift in Sources */,
 				108C747F27D2B6140038AE39 /* Network+Manager.swift in Sources */,
 				108C743527D299CA0038AE39 /* Coordinator.swift in Sources */,
 				108C744E27D2AB600038AE39 /* MainView+Coordinator.swift in Sources */,
 				108C744727D2A0520038AE39 /* Storyboarded.swift in Sources */,
+				10B013BE27D54237002398D8 /* DetailViewController.swift in Sources */,
 				10FC2A3F27D2CF4900344FF0 /* Mock+Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
