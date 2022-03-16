@@ -8,19 +8,20 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: NSObject, Coordinator {
+final class MainCoordinator: NSObject, Coordinator {
 
     var childCoordinators = [Coordinator]()
     unowned let navigationController: UINavigationController
 
-    required init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
-        let vc = MainViewController.instantiate()
         let manager = NetworkManager()
+        let vc = MainViewController.instantiate()
         let vm = MainViewViewModel(network: manager)
+        
         vc.coordinator = self
         vc.viewModel = vm
         
@@ -38,7 +39,7 @@ class MainCoordinator: NSObject, Coordinator {
         child.start()
     }
     
-    func childDidFinish(_ child: Coordinator?) {
+    func childDidFinish(child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
                 childCoordinators.remove(at: index)
@@ -62,7 +63,7 @@ extension MainCoordinator: UINavigationControllerDelegate {
         }
         
         if let buyViewController = fromViewController as? DetailViewController {
-            childDidFinish(buyViewController.coordinator)
+            childDidFinish(child: buyViewController.coordinator)
         }
     }
 }

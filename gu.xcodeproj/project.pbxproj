@@ -144,7 +144,7 @@
 		108C742F27D299680038AE39 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				109B1F5D27C285870073F60D /* AppDelegate.swift */,
+				10D6377727E27A0B00CD30A3 /* Core */,
 				108C743327D299BD0038AE39 /* Coordinator */,
 			);
 			path = App;
@@ -325,6 +325,14 @@
 				10CC3E3127D4149B004FD09B /* Network+Test.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		10D6377727E27A0B00CD30A3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				109B1F5D27C285870073F60D /* AppDelegate.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		10FC2A3D27D2CF2F00344FF0 /* Mock */ = {
