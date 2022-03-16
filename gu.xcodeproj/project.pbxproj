@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104C2BDD27E20821004FAEA1 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C2BDC27E20821004FAEA1 /* MainViewViewModel.swift */; };
+		104C2BE127E20829004FAEA1 /* MainViewViewModel+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C2BE027E20829004FAEA1 /* MainViewViewModel+Protocol.swift */; };
 		108C743527D299CA0038AE39 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C743427D299CA0038AE39 /* Coordinator.swift */; };
 		108C743927D29A400038AE39 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108C743827D29A400038AE39 /* MainViewController.storyboard */; };
 		108C744727D2A0520038AE39 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C744627D2A0520038AE39 /* Storyboarded.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		0D2762E933D12B0CD2A93293 /* Pods-gu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gu.release.xcconfig"; path = "Target Support Files/Pods-gu/Pods-gu.release.xcconfig"; sourceTree = "<group>"; };
+		104C2BDC27E20821004FAEA1 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
+		104C2BE027E20829004FAEA1 /* MainViewViewModel+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewViewModel+Protocol.swift"; sourceTree = "<group>"; };
 		108C743427D299CA0038AE39 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		108C743827D29A400038AE39 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		108C744627D2A0520038AE39 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104C2BDB27E20810004FAEA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				104C2BDC27E20821004FAEA1 /* MainViewViewModel.swift */,
+				104C2BE027E20829004FAEA1 /* MainViewViewModel+Protocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		107E08B827E1312D0089EC85 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 		108C744C27D2AB4F0038AE39 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				104C2BDB27E20810004FAEA1 /* ViewModel */,
 				107E08B927E131380089EC85 /* Storyboard */,
 				108C745A27D2AFFF0038AE39 /* Cell */,
 				107E08B827E1312D0089EC85 /* Coordinator */,
@@ -514,6 +528,7 @@
 			files = (
 				108C748327D2B9980038AE39 /* Network+Contracts.swift in Sources */,
 				108C745D27D2B00C0038AE39 /* UserCell.swift in Sources */,
+				104C2BDD27E20821004FAEA1 /* MainViewViewModel.swift in Sources */,
 				108C747927D2B4EA0038AE39 /* Constants.swift in Sources */,
 				108C745227D2AB930038AE39 /* Coordinator+Protocols.swift in Sources */,
 				109B1F6227C285870073F60D /* MainViewController.swift in Sources */,
@@ -523,6 +538,7 @@
 				10B013CA27D5428D002398D8 /* DetailViewCoordinator.swift in Sources */,
 				108C746E27D2B3F00038AE39 /* GitUsers+Model.swift in Sources */,
 				108C747F27D2B6140038AE39 /* Network+Manager.swift in Sources */,
+				104C2BE127E20829004FAEA1 /* MainViewViewModel+Protocol.swift in Sources */,
 				108C743527D299CA0038AE39 /* Coordinator.swift in Sources */,
 				108C744E27D2AB600038AE39 /* MainView+Coordinator.swift in Sources */,
 				108C744727D2A0520038AE39 /* Storyboarded.swift in Sources */,

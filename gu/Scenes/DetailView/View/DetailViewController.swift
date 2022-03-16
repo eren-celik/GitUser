@@ -10,11 +10,11 @@ import UIKit
 final class DetailViewController: UIViewController {
     
     weak var coordinator: DetailViewCoordinator?
-    var name: String?
+    var user: GitUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = name
+        title = user?.login
     }
     
     override func viewDidDisappear(_ animated: Bool) {

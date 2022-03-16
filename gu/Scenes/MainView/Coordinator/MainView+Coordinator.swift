@@ -19,7 +19,11 @@ class MainCoordinator: NSObject, Coordinator {
 
     func start() {
         let vc = MainViewController.instantiate()
+        let manager = NetworkManager()
+        let vm = MainViewViewModel(network: manager)
         vc.coordinator = self
+        vc.viewModel = vm
+        
         navigationController.delegate = self
         navigationController.pushViewController(vc, animated: false)
     }

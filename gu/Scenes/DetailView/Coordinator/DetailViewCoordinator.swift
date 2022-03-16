@@ -21,7 +21,9 @@ final class DetailViewCoordinator: Coordinator {
     func start() {
         let vc = DetailViewController.instantiate()
         vc.coordinator = self
-        vc.name = data?["userName"] as? String
+        if let user = data?["user"] as? GitUser {
+            vc.user = user
+        }
         navigationController.pushViewController(vc, animated: false)
     }
     
