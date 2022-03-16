@@ -12,8 +12,9 @@ protocol BaseCoordinator {
     func start()
 }
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get set }
     init(navigationController: UINavigationController)
     func start()
+    func dismiss()
 }

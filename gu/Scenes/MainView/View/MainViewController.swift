@@ -10,6 +10,7 @@ import UIKit
 final class MainViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
