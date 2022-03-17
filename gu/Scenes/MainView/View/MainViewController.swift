@@ -10,10 +10,22 @@ import UIKit
 final class MainViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
+    var users: GitUsers = []
+    weak var coordinator: MainCoordinator?
+    
+    var viewModel: MainViewViewModel! {
+        didSet {
+            viewModel.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureView()
+    }
+    
+    private func configureView() {
+        viewModel.getUsers(perPage: 50)
         setTableView()
         setStyle()
     }
@@ -21,5 +33,18 @@ final class MainViewController: UIViewController, Storyboarded {
     private func setStyle() {
         navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
+extension MainViewController: MainViewDelegate {
+    
+    func handleOutputs(_ output: MainViewOutputs) {
+        defer { tableView.reloadData() }
+        switch output {
+        case .showUsers(let user):
+            users = user
+        case .showAlert(let error):
+            print("DEBUG: error", error)
+        }
     }
 }
