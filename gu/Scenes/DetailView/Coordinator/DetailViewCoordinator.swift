@@ -7,27 +7,23 @@
 
 import UIKit
 
-final class DetailViewCoordinator: Coordinator {
+class DetailViewCoordinator: ViewCoordinatorProtocol {
     
-    var childCoordinators: [Coordinator] = [Coordinator]()
-    unowned let navigationController: UINavigationController
-    weak var parentCoordinator: MainCoordinator?
-    var data: [String: Any]?
+    var finishFlow: (() -> Void)?
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    private let router: RouterProtocol
+    
+    init(router: RouterProtocol) {
+        self.router = router
     }
     
-    func start() {
+    override func start() {
         let vc = DetailViewController.instantiate()
         vc.coordinator = self
-        if let user = data?["user"] as? GitUser {
-            vc.user = user
-        }
-        navigationController.pushViewController(vc, animated: false)
+        self.router.push(vc)
     }
     
-    func dismiss() {
-        parentCoordinator?.childDidFinish(self)
+    override func dismiss() {
+        finishFlow?()
     }
 }

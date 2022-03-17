@@ -8,62 +8,44 @@
 import Foundation
 import UIKit
 
-final class MainCoordinator: NSObject, Coordinator {
-
-    var childCoordinators = [Coordinator]()
-    unowned let navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+final class MainCoordinator: ViewCoordinatorProtocol {
+    
+    var finishFlow: (() -> Void)?
+    
+    private let router: RouterProtocol
+    private let coordinatorFactory: CoordinatorFactoryProtocol
+    
+    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) {
+        self.router = router
+        self.coordinatorFactory = coordinatorFactory
     }
-
-    func start() {
+    
+    func showMain() {
         let manager = NetworkManager()
         let vc = MainViewController.instantiate()
-        let vm = MainViewViewModel(network: manager)
-        
         vc.coordinator = self
+        let vm = MainViewViewModel(network: manager)
         vc.viewModel = vm
         
-        navigationController.delegate = self
-        navigationController.pushViewController(vc, animated: false)
+        self.router.setRootModule(vc)
     }
     
-    func dismiss() {}
-    
-    func userDetail(data: [String: Any]?) {
-        let child = DetailViewCoordinator(navigationController: navigationController)
-        childCoordinators.append(child)
-        child.parentCoordinator = self
-        child.data = data
-        child.start()
+    func showDetail() {
+        let vc = DetailViewController.instantiate()
+        let coord = self.coordinatorFactory.makeDetailCoordinator(router: router)
+        coord.finishFlow = { [weak self, unowned coord] in
+            self?.removeDependency(coord)
+            self?.router.popToModule(module: vc, animated: true)
+        }
+        self.addDependency(coord)
+        coord.start()
     }
     
-    func childDidFinish(child: Coordinator?) {
-        for (index, coordinator) in childCoordinators.enumerated() {
-            if coordinator === child {
-                childCoordinators.remove(at: index)
-                break
-            }
-        }
+    override func dismiss() {
+        finishFlow?()
     }
-}
-
-extension MainCoordinator: UINavigationControllerDelegate {
     
-    func navigationController(_ navigationController: UINavigationController,
-                              didShow viewController: UIViewController,
-                              animated: Bool) {
-        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
-            return
-        }
-
-        if navigationController.viewControllers.contains(fromViewController) {
-            return
-        }
-        
-        if let buyViewController = fromViewController as? DetailViewController {
-            childDidFinish(child: buyViewController.coordinator)
-        }
+    override func start() {
+        showMain()
     }
 }

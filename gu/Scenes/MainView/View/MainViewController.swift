@@ -10,8 +10,8 @@ import UIKit
 final class MainViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
-    weak var coordinator: MainCoordinator?
     var users: GitUsers = []
+    weak var coordinator: MainCoordinator?
     
     var viewModel: MainViewViewModel! {
         didSet {
