@@ -30,8 +30,10 @@ final class MainCoordinator: ViewCoordinatorProtocol {
         self.router.setRootModule(vc)
     }
     
-    func showDetail() {
+    func showDetail(user: GitUser) {
         let vc = DetailViewController.instantiate()
+        print("DEBUG: user", user.login)
+        vc.user = user
         let coord = self.coordinatorFactory.makeDetailCoordinator(router: router)
         coord.finishFlow = { [weak self, unowned coord] in
             self?.removeDependency(coord)

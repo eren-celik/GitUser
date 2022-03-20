@@ -14,11 +14,19 @@ final class UserCell: UITableViewCell {
     var data: GitUser? {
         didSet {
             nameLabel.text = data?.login
+            if data?.login == "mojombo" {
+                self.backgroundColor = .red
+            }
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        data = nil
     }
 }

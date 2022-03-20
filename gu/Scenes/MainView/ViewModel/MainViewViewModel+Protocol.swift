@@ -16,6 +16,6 @@ protocol MainViewDelegate: AnyObject {
 }
 
 enum MainViewOutputs {
-    case showUsers(GitUsers)
+    case onFetchCompleted
     case showAlert(String)
 }

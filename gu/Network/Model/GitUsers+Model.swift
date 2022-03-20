@@ -9,7 +9,13 @@ import Foundation
 
 typealias GitUsers = [GitUser]
 
-struct GitUser: Codable {
+struct GitUser: Codable, Hashable {
+    
+    //For unique
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     let login: String?
     let id: Int?
     let nodeID: String?

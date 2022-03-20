@@ -44,7 +44,8 @@ extension GuAPI: TargetType {
     var headers: [String : String]? {
         switch self {
         case .users:
-            return ["Content-Type": "application/json; charset=utf-8"]
+            return ["Content-Type": "application/json; charset=utf-8",
+                    "Authorization": "Basic ZXJlbi1jZWxpazpnaHBfNlhDTVZKek5QUlVWZWF2YnNhcWs3TEVwNEFmZkt2MjhCYkx4"]
         }
     }
     

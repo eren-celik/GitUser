@@ -10,7 +10,6 @@ import UIKit
 final class MainViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
-    var users: GitUsers = []
     weak var coordinator: MainCoordinator?
     
     var viewModel: MainViewViewModel! {
@@ -25,7 +24,7 @@ final class MainViewController: UIViewController, Storyboarded {
     }
     
     private func configureView() {
-        viewModel.getUsers(perPage: 50)
+        viewModel.getUsers(perPage: 20)
         setTableView()
         setStyle()
     }
@@ -41,8 +40,8 @@ extension MainViewController: MainViewDelegate {
     func handleOutputs(_ output: MainViewOutputs) {
         defer { tableView.reloadData() }
         switch output {
-        case .showUsers(let user):
-            users = user
+        case .onFetchCompleted:
+            break
         case .showAlert(let error):
             print("DEBUG: error", error)
         }
