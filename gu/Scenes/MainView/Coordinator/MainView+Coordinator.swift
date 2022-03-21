@@ -23,9 +23,10 @@ final class MainCoordinator: ViewCoordinatorProtocol {
     func showMain() {
         let manager = NetworkManager()
         let vc = MainViewController.instantiate()
-        vc.coordinator = self
         let vm = MainViewViewModel(network: manager)
+        
         vc.viewModel = vm
+        vc.coordinator = self
         
         self.router.setRootModule(vc)
     }

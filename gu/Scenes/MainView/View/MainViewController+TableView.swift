@@ -14,11 +14,16 @@ extension MainViewController {
         tableView.delegate = self
         
         setCells()
+        setTableViewStyle()
     }
     
     private func setCells() {
         let nibName = UINib(nibName: "UserCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "UserCell")
+    }
+    
+    private func setTableViewStyle() {
+        tableView.separatorStyle = .none
     }
 }
 
@@ -29,7 +34,7 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 90
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -40,7 +45,7 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UserCell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! UserCell
+        let cell: UserCell = tableView.reusableCell()
         cell.data = viewModel.users[indexPath.row]
         return cell
     }

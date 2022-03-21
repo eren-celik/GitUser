@@ -27,7 +27,6 @@ final class MainViewController: BaseViewController, Storyboarded {
         viewModel.getUsers(perPage: 20)
         setTableView()
         setStyle()
-        
     }
     
     private func setStyle() {
@@ -41,12 +40,19 @@ extension MainViewController: MainViewDelegate {
     
     func handleOutputs(_ output: MainViewOutputs) {
         
-        defer { tableView.reloadData() }
+        defer {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         switch output {
         case .onFetchCompleted:
             showHud(show: false)
         case .showAlert(let error):
-            print("DEBUG: error", error)
+            showHud(text: error,
+                    viewType: .error,
+                    show: true,
+                    afterDismiss: 2)
         }
     }
 }

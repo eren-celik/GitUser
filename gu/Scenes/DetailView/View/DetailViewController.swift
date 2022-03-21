@@ -19,7 +19,7 @@ final class DetailViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.coordinator?.dismiss()
+        coordinator?.dismiss()
     }
 }
 

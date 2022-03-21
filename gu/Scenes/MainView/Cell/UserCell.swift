@@ -12,6 +12,7 @@ final class UserCell: UITableViewCell {
     
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var userImageView: UIImageView!
+    @IBOutlet weak private var containerView: UIView!
     
     var data: GitUser? {
         didSet {
@@ -39,14 +40,20 @@ final class UserCell: UITableViewCell {
     
     private func configureCell() {
         setStyle()
-        self.selectionStyle = .none
         userImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
     }
     
     private func setStyle() {
+        
+        self.selectionStyle = .none
+        
         userImageView.layer.cornerRadius = 10
         userImageView.layer.masksToBounds = true
         
-        nameLabel.font = .rounded(ofSize: 17, weight: .regular)
+        containerView.layer.cornerRadius = 10
+        containerView.layer.masksToBounds = true
+        containerView.backgroundColor = .lightGray
+        
+        nameLabel.font = .rounded(ofSize: 17, weight: .semibold)
     }
 }

@@ -18,12 +18,17 @@ class BaseViewController: UIViewController {
     
     func showHud(text: String? = "Loading",
                  viewType: AlertStyle? = nil,
-                 show: Bool) {
+                 show: Bool,
+                 afterDismiss: TimeInterval? = nil) {
         hud.textLabel.text = text
         if viewType != nil {
             hud.indicatorView = viewType?.view
         }
         
-        show ? hud.show(in: view) : hud.dismiss(animated: true)        
+        show ? hud.show(in: view) : hud.dismiss(animated: true)
+        
+        if afterDismiss != nil {
+            hud.dismiss(afterDelay: afterDismiss!)
+        }
     }
 }
