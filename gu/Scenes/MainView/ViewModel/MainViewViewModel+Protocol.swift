@@ -15,7 +15,13 @@ protocol MainViewDelegate: AnyObject {
     func handleOutputs(_ output: MainViewOutputs)
 }
 
+enum TYEW {
+    case normal
+    case pagi
+}
+
 enum MainViewOutputs {
     case onFetchCompleted
+    case addPagi(Bool)
     case showAlert(String)
 }

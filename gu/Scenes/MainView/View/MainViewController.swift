@@ -34,12 +34,22 @@ final class MainViewController: BaseViewController, Storyboarded {
         navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    func loadingIndicator(show: Bool) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0,y: 0,
+                                              width: view.frame.size.width,
+                                              height: 90))
+        let indicator = UIActivityIndicatorView()
+        indicator.center = footerView.center
+        footerView.addSubview(indicator)
+        indicator.startAnimating()
+        return show ? footerView : nil
+    }
 }
 
 extension MainViewController: MainViewDelegate {
     
     func handleOutputs(_ output: MainViewOutputs) {
-        
         defer {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -48,11 +58,10 @@ extension MainViewController: MainViewDelegate {
         switch output {
         case .onFetchCompleted:
             showHud(show: false)
-        case .showAlert(let error):
-            showHud(text: error,
-                    viewType: .error,
-                    show: true,
-                    afterDismiss: 2)
+        case let .addPagi(show):
+            tableView.tableFooterView = loadingIndicator(show: show)
+        case let .showAlert(error):
+            showHud(text: error,viewType: .error, show: true, afterDismiss: 2)
         }
     }
 }

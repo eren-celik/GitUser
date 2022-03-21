@@ -22,6 +22,7 @@ final class MainViewViewModel: MainViewModelProtocol {
         if index == users.count - 1 && pageCount <= 100 {
             pageCount += 20
             getUsers(perPage: pageCount)
+            self.delegate?.handleOutputs(.addPagi(true))
         }
     }
     
@@ -32,8 +33,9 @@ final class MainViewViewModel: MainViewModelProtocol {
                 DispatchQueue.global(qos: .default).async {
                     let temp = (self.users + user)
                     self.users = temp.uniqued()
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                         self.delegate?.handleOutputs(.onFetchCompleted)
+                        self.delegate?.handleOutputs(.addPagi(false))
                     }
                 }
             case .failure(let error):
