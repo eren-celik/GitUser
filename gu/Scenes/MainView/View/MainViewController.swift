@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController, Storyboarded {
+final class MainViewController: BaseViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
     weak var coordinator: MainCoordinator?
@@ -27,9 +27,11 @@ final class MainViewController: UIViewController, Storyboarded {
         viewModel.getUsers(perPage: 20)
         setTableView()
         setStyle()
+        
     }
     
     private func setStyle() {
+        showHud(show: true)
         navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -38,10 +40,11 @@ final class MainViewController: UIViewController, Storyboarded {
 extension MainViewController: MainViewDelegate {
     
     func handleOutputs(_ output: MainViewOutputs) {
+        
         defer { tableView.reloadData() }
         switch output {
         case .onFetchCompleted:
-            break
+            showHud(show: false)
         case .showAlert(let error):
             print("DEBUG: error", error)
         }

@@ -29,10 +29,12 @@ final class MainViewViewModel: MainViewModelProtocol {
         networkManager.getUsers(perPage: perPage) { [unowned self] (result) in
             switch result {
             case .success(let user):
-                DispatchQueue.main.async {
+                DispatchQueue.global(qos: .default).async {
                     let temp = (self.users + user)
                     self.users = temp.uniqued()
-                    self.delegate?.handleOutputs(.onFetchCompleted)
+                    DispatchQueue.main.async {
+                        self.delegate?.handleOutputs(.onFetchCompleted)
+                    }
                 }
             case .failure(let error):
                 self.delegate?.handleOutputs(.showAlert(error.localizedDescription))

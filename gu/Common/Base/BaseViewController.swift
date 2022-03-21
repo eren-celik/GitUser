@@ -8,22 +8,22 @@
 import UIKit
 import JGProgressHUD
 
-extension UIViewController {
+class BaseViewController: UIViewController {
     
-    // MARK: - HUD
-    func showHud(text: String, viewType: AlertStyle? = nil, show: Bool) {
-        let hud = JGProgressHUD()
+    private let hud = JGProgressHUD()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    func showHud(text: String? = "Loading",
+                 viewType: AlertStyle? = nil,
+                 show: Bool) {
         hud.textLabel.text = text
-        hud.indicatorView = viewType?.view
-        
-        hud.shadow = JGProgressHUDShadow(color: .black,
-                                         offset: .zero,
-                                         radius: 5.0,
-                                         opacity: 0.2)
-        if show {
-            hud.show(in: self.view)
-        }else {
-            hud.dismiss()
+        if viewType != nil {
+            hud.indicatorView = viewType?.view
         }
+        
+        show ? hud.show(in: view) : hud.dismiss(animated: true)        
     }
 }
