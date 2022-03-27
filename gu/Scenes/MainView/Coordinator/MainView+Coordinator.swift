@@ -23,22 +23,22 @@ final class MainCoordinator: ViewCoordinatorProtocol {
     func showMain() {
         let manager = NetworkManager()
         let vc = MainViewController.instantiate()
-        vc.coordinator = self
         let vm = MainViewViewModel(network: manager)
+        
         vc.viewModel = vm
+        vc.coordinator = self
         
         self.router.setRootModule(vc)
     }
     
-    func showDetail() {
-        let vc = DetailViewController.instantiate()
-        let coord = self.coordinatorFactory.makeDetailCoordinator(router: router)
-        coord.finishFlow = { [weak self, unowned coord] in
-            self?.removeDependency(coord)
-            self?.router.popToModule(module: vc, animated: true)
+    func showDetail(user: GitUser) {
+        let coordiator = self.coordinatorFactory.makeDetailCoordinator(router: router)
+        coordiator.finishFlow = { [weak self, unowned coordiator] in
+            self?.removeDependency(coordiator)
         }
-        self.addDependency(coord)
-        coord.start()
+        self.addDependency(coordiator)
+        coordiator.user = user
+        coordiator.start()
     }
     
     override func dismiss() {

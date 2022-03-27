@@ -7,10 +7,9 @@
 
 import UIKit
 
-final class MainViewController: UIViewController, Storyboarded {
+final class MainViewController: BaseViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
-    var users: GitUsers = []
     weak var coordinator: MainCoordinator?
     
     var viewModel: MainViewViewModel! {
@@ -25,26 +24,40 @@ final class MainViewController: UIViewController, Storyboarded {
     }
     
     private func configureView() {
-        viewModel.getUsers(perPage: 50)
+        viewModel.getUsers()
         setTableView()
         setStyle()
     }
     
     private func setStyle() {
+        showHud(show: true)
         navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func loadingIndicator(show: Bool) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0,y: 0,
+                                              width: view.frame.size.width,
+                                              height: 90))
+        let indicator = UIActivityIndicatorView()
+        indicator.center = footerView.center
+        footerView.addSubview(indicator)
+        indicator.startAnimating()
+        return show ? footerView : nil
     }
 }
 
 extension MainViewController: MainViewDelegate {
     
     func handleOutputs(_ output: MainViewOutputs) {
-        defer { tableView.reloadData() }
         switch output {
-        case .showUsers(let user):
-            users = user
-        case .showAlert(let error):
-            print("DEBUG: error", error)
+        case .onFetchCompleted:
+            showHud(show: false)
+            tableView.reloadData()
+        case let .addIndicator(show):
+            tableView.tableFooterView = loadingIndicator(show: show)
+        case let .showAlert(error):
+            showHud(text: error,viewType: .error, show: true, afterDismiss: 2)
         }
     }
 }

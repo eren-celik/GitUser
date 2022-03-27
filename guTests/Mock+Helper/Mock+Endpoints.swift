@@ -43,3 +43,27 @@ struct CustomNetworkEndpoints {
                         httpHeaderFields: target.headers)
     }
 }
+
+enum StubProvider {
+    case succes
+    case error
+    case empty
+    case networkError
+    
+    var provider: MoyaProvider<GuAPI> {
+        switch self {
+        case .succes:
+            return MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.successEndpoint,
+                                           stubClosure: MoyaProvider.immediatelyStub)
+        case .error:
+            return MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.errorEndpoint,
+                                           stubClosure: MoyaProvider.immediatelyStub)
+        case .empty:
+            return MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.emptyDataClosure,
+                                           stubClosure: MoyaProvider.immediatelyStub)
+        case .networkError:
+            return MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.networkErrorClosure,
+                                           stubClosure: MoyaProvider.immediatelyStub)
+        }
+    }
+}

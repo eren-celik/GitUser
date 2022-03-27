@@ -10,6 +10,7 @@ import UIKit
 class DetailViewCoordinator: ViewCoordinatorProtocol {
     
     var finishFlow: (() -> Void)?
+    var user: GitUser?
     
     private let router: RouterProtocol
     
@@ -20,6 +21,7 @@ class DetailViewCoordinator: ViewCoordinatorProtocol {
     override func start() {
         let vc = DetailViewController.instantiate()
         vc.coordinator = self
+        vc.user = user
         self.router.push(vc)
     }
     

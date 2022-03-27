@@ -51,7 +51,8 @@ extension Router: RouterProtocol {
     }
     
     func popToModule(module: Presentable?, animated: Bool) {
-        if let controllers = self.rootController?.viewControllers , let module = module {
+        if let controllers = self.rootController?.viewControllers,
+           let module = module {
             for controller in controllers {
                 if controller == module as! UIViewController {
                     rootController?.popToViewController(controller, animated: animated)
