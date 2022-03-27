@@ -18,6 +18,6 @@ protocol MainViewDelegate: AnyObject {
 
 enum MainViewOutputs: Equatable {
     case onFetchCompleted
-    case addIndicator(Bool)
+    case gettingMoreUsers(Bool)
     case showAlert(String)
 }
