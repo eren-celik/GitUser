@@ -20,11 +20,11 @@ final class MainViewViewModel: MainViewModelProtocol {
     }
     
     func loadMoreUsers() {
-        delegate?.handleOutputs(.addIndicator(false))
+        delegate?.handleOutputs(.gettingMoreUsers(false))
         if pageCount <= 100 {
             pageCount += 20
             getUsers()
-            delegate?.handleOutputs(.addIndicator(true))
+            delegate?.handleOutputs(.gettingMoreUsers(true))
         }
     }
     

@@ -65,7 +65,7 @@ final class MainViewModelTest: XCTestCase {
         sut.loadMoreUsers()
         
         //Then
-        XCTAssertEqual(view.invokedHandleOutputsParameters?.0, MainViewOutputs.addIndicator(true))
+        XCTAssertEqual(view.invokedHandleOutputsParameters?.0, MainViewOutputs.gettingMoreUsers(true))
         
     }
     

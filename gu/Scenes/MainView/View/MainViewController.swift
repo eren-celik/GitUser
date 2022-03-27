@@ -54,7 +54,7 @@ extension MainViewController: MainViewDelegate {
         case .onFetchCompleted:
             showHud(show: false)
             tableView.reloadData()
-        case let .addIndicator(show):
+        case let .gettingMoreUsers(show):
             tableView.tableFooterView = loadingIndicator(show: show)
         case let .showAlert(error):
             showHud(text: error,viewType: .error, show: true, afterDismiss: 2)
