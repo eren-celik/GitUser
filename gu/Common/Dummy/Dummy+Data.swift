@@ -7,29 +7,29 @@
 
 import Foundation
 
-fileprivate enum MockDataFiles {
+fileprivate enum DummyDataFiles {
     
     case users
     
     var name: String {
         switch self {
         case .users:
-            return "git_users_mock"
+            return "git_users_dummy"
         }
     }
 }
 
-struct MockData {
+struct DummyData {
     
     static var validUsersData: Data { return jsonData(.users) }
 
-    private static func jsonData(_ file: MockDataFiles) -> Data {
+    private static func jsonData(_ file: DummyDataFiles) -> Data {
         guard let filepath = Bundle.main.path(forResource: file.name, ofType: "json") else { return Data() }
         do {
             let contents = try String(contentsOfFile: filepath, encoding: .utf8)
             return contents.data(using: .utf8) ?? Data()
         } catch let error {
-            print("Error", error.localizedDescription)
+            print("DEBUG: error load dummy file", error.localizedDescription)
             return Data()
         }
     }

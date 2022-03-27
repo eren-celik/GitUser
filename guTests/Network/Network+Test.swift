@@ -28,8 +28,7 @@ final class NetworkTest: XCTestCase {
     func test_network_getusers_shouldBeUsers() {
         
         /// Given
-        provider = MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.successEndpoint,
-                                       stubClosure: MoyaProvider.immediatelyStub)
+        provider = StubProvider.succes.provider
         manager.provider = provider
         var users: GitUsers?
 
@@ -52,8 +51,7 @@ final class NetworkTest: XCTestCase {
     
     func test_network_getusers_shouldBeGetEmptyData() {
         /// Given
-        provider = MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.emptyDataClosure,
-                                       stubClosure: MoyaProvider.immediatelyStub)
+        provider = StubProvider.empty.provider
         manager.provider = provider
         var error: GUNetworkErrors?
         
@@ -75,8 +73,7 @@ final class NetworkTest: XCTestCase {
     
     func test_network_getusers_getNetworkError() {
         /// Given
-        provider = MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.networkErrorClosure,
-                                       stubClosure: MoyaProvider.immediatelyStub)
+        provider = StubProvider.networkError.provider
         manager.provider = provider
         var error: GUNetworkErrors?
         
@@ -98,8 +95,7 @@ final class NetworkTest: XCTestCase {
     
     func test_network_getusers_shouldBeFail() {
         /// Given
-        provider = MoyaProvider<GuAPI>(endpointClosure: CustomNetworkEndpoints.errorEndpoint,
-                                       stubClosure: MoyaProvider.immediatelyStub)
+        provider = StubProvider.error.provider
         manager.provider = provider
         var error: GUNetworkErrors?
         

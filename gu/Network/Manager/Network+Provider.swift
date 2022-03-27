@@ -52,7 +52,7 @@ extension GuAPI: TargetType {
     var sampleData: Data {
         switch self {
         case .users:
-            return MockData.validUsersData
+            return DummyData.validUsersData
         }
     }
 }

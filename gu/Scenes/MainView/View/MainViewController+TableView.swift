@@ -38,7 +38,9 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.loadMoreUsers(index: indexPath.row)
+        if indexPath.row == viewModel.users.count - 1 {
+            viewModel.loadMoreUsers()
+        }
     }
 }
 

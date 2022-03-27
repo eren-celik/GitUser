@@ -9,19 +9,15 @@ import Foundation
 
 protocol MainViewModelProtocol {
     var delegate: MainViewDelegate? { get set }
+    var networkManager: NetworkManager { get set }
 }
 
 protocol MainViewDelegate: AnyObject {
     func handleOutputs(_ output: MainViewOutputs)
 }
 
-enum TYEW {
-    case normal
-    case pagi
-}
-
-enum MainViewOutputs {
+enum MainViewOutputs: Equatable {
     case onFetchCompleted
-    case addPagi(Bool)
+    case addIndicator(Bool)
     case showAlert(String)
 }

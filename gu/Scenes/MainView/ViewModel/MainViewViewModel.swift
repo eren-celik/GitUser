@@ -10,37 +10,43 @@ import Foundation
 final class MainViewViewModel: MainViewModelProtocol {
     
     weak var delegate: MainViewDelegate?
-    private var networkManager: NetworkManager
-    private var pageCount = 20
+    var networkManager: NetworkManager
     var users: GitUsers = []
+    
+    private var pageCount = 20
     
     init(network: NetworkManager) {
         self.networkManager = network
     }
     
-    func loadMoreUsers(index: Int) {
-        if index == users.count - 1 && pageCount <= 100 {
+    func loadMoreUsers() {
+        delegate?.handleOutputs(.addIndicator(false))
+        if pageCount <= 100 {
             pageCount += 20
-            getUsers(perPage: pageCount)
-            self.delegate?.handleOutputs(.addPagi(true))
+            getUsers()
+            delegate?.handleOutputs(.addIndicator(true))
         }
     }
     
-    func getUsers(perPage: Int) {
-        networkManager.getUsers(perPage: perPage) { [unowned self] (result) in
+    func getUsers() {
+        networkManager.getUsers(perPage: pageCount) { [unowned self] (result) in
             switch result {
             case .success(let user):
-                DispatchQueue.global(qos: .default).async {
+                DispatchQueue.global(qos: .background).async {
                     let temp = (self.users + user)
                     self.users = temp.uniqued()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.delegate?.handleOutputs(.onFetchCompleted)
-                        self.delegate?.handleOutputs(.addPagi(false))
+                    DispatchQueue.main.async {
+                        self.handleEvents(.onFetchCompleted)
                     }
                 }
+                
             case .failure(let error):
-                self.delegate?.handleOutputs(.showAlert(error.localizedDescription))
+                self.handleEvents(.showAlert(error.localizedDescription))
             }
         }
+    }
+    
+    private func handleEvents(_ event: MainViewOutputs) {
+        delegate?.handleOutputs(event)
     }
 }

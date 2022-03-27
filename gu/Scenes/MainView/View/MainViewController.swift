@@ -24,7 +24,7 @@ final class MainViewController: BaseViewController, Storyboarded {
     }
     
     private func configureView() {
-        viewModel.getUsers(perPage: 20)
+        viewModel.getUsers()
         setTableView()
         setStyle()
     }
@@ -50,15 +50,11 @@ final class MainViewController: BaseViewController, Storyboarded {
 extension MainViewController: MainViewDelegate {
     
     func handleOutputs(_ output: MainViewOutputs) {
-        defer {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
         switch output {
         case .onFetchCompleted:
             showHud(show: false)
-        case let .addPagi(show):
+            tableView.reloadData()
+        case let .addIndicator(show):
             tableView.tableFooterView = loadingIndicator(show: show)
         case let .showAlert(error):
             showHud(text: error,viewType: .error, show: true, afterDismiss: 2)
