@@ -1,5 +1,5 @@
 //
-//  Mock+Endpoints.swift
+//  Stub+Endpoints.swift
 //  guTests
 //
 //  Created by Eren  Çelik on 6.03.2022.
