@@ -15,6 +15,7 @@
 		105F5A4D27E3AD9C009732D3 /* BaseViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105F5A4C27E3AD9C009732D3 /* BaseViewController+Helpers.swift */; };
 		105F5A5427E3C091009732D3 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105F5A5327E3C091009732D3 /* Array+Extension.swift */; };
 		1064465127E7FAFE00E8D78F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064465027E7FAFE00E8D78F /* UIFont+Extension.swift */; };
+		1077536527F25D3300AC46FB /* UserModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077536427F25D3300AC46FB /* UserModel+Tests.swift */; };
 		108C743527D299CA0038AE39 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C743427D299CA0038AE39 /* AppCoordinator.swift */; };
 		108C743927D29A400038AE39 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108C743827D29A400038AE39 /* MainViewController.storyboard */; };
 		108C744727D2A0520038AE39 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C744627D2A0520038AE39 /* Storyboarded.swift */; };
@@ -69,6 +70,7 @@
 		105F5A4C27E3AD9C009732D3 /* BaseViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Helpers.swift"; sourceTree = "<group>"; };
 		105F5A5327E3C091009732D3 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		1064465027E7FAFE00E8D78F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		1077536427F25D3300AC46FB /* UserModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserModel+Tests.swift"; sourceTree = "<group>"; };
 		108C743427D299CA0038AE39 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		108C743827D29A400038AE39 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		108C744627D2A0520038AE39 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -167,6 +169,23 @@
 				10A925E427E916EA007F531E /* UITableView+Utility.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1077535E27F25C6200AC46FB /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				10FC2A3E27D2CF4900344FF0 /* Dummy+Data.swift */,
+				10FC2A3D27D2CF2F00344FF0 /* Dummy+Data */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		1077536127F25D0300AC46FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1077536427F25D3300AC46FB /* UserModel+Tests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		107E08B827E1312D0089EC85 /* Coordinator */ = {
@@ -284,9 +303,9 @@
 		108C747627D2B4D30038AE39 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1077535E27F25C6200AC46FB /* Testing */,
 				105F5A4327E3AD6B009732D3 /* Base */,
 				105F5A5227E3C083009732D3 /* Extension */,
-				10FC2A3D27D2CF2F00344FF0 /* Dummy */,
 				108C747727D2B4DF0038AE39 /* Utilites */,
 			);
 			path = Common;
@@ -335,10 +354,11 @@
 		109B1F7727C285980073F60D /* guTests */ = {
 			isa = PBXGroup;
 			children = (
-				10A925EA27E92085007F531E /* Scenes */,
-				10CC3E3027D41486004FD09B /* Network */,
-				10CC3E2627D41274004FD09B /* Mock+Helper */,
+				1077536127F25D0300AC46FB /* Model */,
 				109B1F7A27C285980073F60D /* Info.plist */,
+				10CC3E2627D41274004FD09B /* Mock+Helper */,
+				10CC3E3027D41486004FD09B /* Network */,
+				10A925EA27E92085007F531E /* Scenes */,
 			);
 			path = guTests;
 			sourceTree = "<group>";
@@ -427,13 +447,12 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
-		10FC2A3D27D2CF2F00344FF0 /* Dummy */ = {
+		10FC2A3D27D2CF2F00344FF0 /* Dummy+Data */ = {
 			isa = PBXGroup;
 			children = (
 				10FC2A3627D2CCED00344FF0 /* git_users_dummy.json */,
-				10FC2A3E27D2CF4900344FF0 /* Dummy+Data.swift */,
 			);
-			path = Dummy;
+			path = "Dummy+Data";
 			sourceTree = "<group>";
 		};
 		62F4A9166C2C32A6E38C12B3 /* Frameworks */ = {
@@ -664,6 +683,7 @@
 			files = (
 				10A925ED27E920A0007F531E /* MainViewModel+Tests.swift in Sources */,
 				10CC3E4227D41A5C004FD09B /* Mock+Endpoints.swift in Sources */,
+				1077536527F25D3300AC46FB /* UserModel+Tests.swift in Sources */,
 				10CC3E3227D4149B004FD09B /* Network+Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
