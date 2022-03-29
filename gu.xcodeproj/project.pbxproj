@@ -200,13 +200,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		1077537127F2607000AC46FB /* Core */ = {
+		1077537127F2607000AC46FB /* App */ = {
 			isa = PBXGroup;
 			children = (
-				1077537227F260A300AC46FB /* BaseCoordinator+Test.swift */,
-				10ACECB927F3129300D79F1A /* Router+Test.swift */,
+				108E9B8B27F385E40027F29E /* Router */,
+				108E9B8A27F385D00027F29E /* Coordinator */,
 			);
-			path = Core;
+			path = App;
 			sourceTree = "<group>";
 		};
 		107E08B827E1312D0089EC85 /* Coordinator */ = {
@@ -340,6 +340,30 @@
 			path = Utilites;
 			sourceTree = "<group>";
 		};
+		108E9B8A27F385D00027F29E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				108E9B8C27F385ED0027F29E /* Core */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		108E9B8B27F385E40027F29E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				10ACECB927F3129300D79F1A /* Router+Test.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		108E9B8C27F385ED0027F29E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1077537227F260A300AC46FB /* BaseCoordinator+Test.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		109B1F5127C285870073F60D = {
 			isa = PBXGroup;
 			children = (
@@ -375,7 +399,7 @@
 		109B1F7727C285980073F60D /* guTests */ = {
 			isa = PBXGroup;
 			children = (
-				1077537127F2607000AC46FB /* Core */,
+				1077537127F2607000AC46FB /* App */,
 				1077536127F25D0300AC46FB /* Model */,
 				10CC3E3027D41486004FD09B /* Network */,
 				10A925EA27E92085007F531E /* Scenes */,
