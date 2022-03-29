@@ -30,10 +30,7 @@ extension Router: RouterProtocol {
     }
     
     func push(_ module: Presentable?) {
-        guard let controller = module?.toPresent(),
-              (controller is UINavigationController == false) else {
-            return
-        }
+        guard let controller = module?.toPresent() else { return }
         rootController?.pushViewController(controller, animated: true)
     }
     
@@ -50,12 +47,12 @@ extension Router: RouterProtocol {
         rootController?.popViewController(animated: true)
     }
     
-    func popToModule(module: Presentable?, animated: Bool) {
+    func popToModule(module: Presentable?) {
         if let controllers = self.rootController?.viewControllers,
-           let module = module {
+           let module = module?.toPresent() {
             for controller in controllers {
-                if controller == module as! UIViewController {
-                    rootController?.popToViewController(controller, animated: animated)
+                if controller == module {
+                    rootController?.popToViewController(controller, animated: true)
                     break
                 }
             }
