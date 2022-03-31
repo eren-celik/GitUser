@@ -15,6 +15,8 @@
 		105F5A4D27E3AD9C009732D3 /* BaseViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105F5A4C27E3AD9C009732D3 /* BaseViewController+Helpers.swift */; };
 		105F5A5427E3C091009732D3 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105F5A5327E3C091009732D3 /* Array+Extension.swift */; };
 		1064465127E7FAFE00E8D78F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064465027E7FAFE00E8D78F /* UIFont+Extension.swift */; };
+		1077536527F25D3300AC46FB /* UserModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077536427F25D3300AC46FB /* UserModel+Tests.swift */; };
+		1077537327F260A300AC46FB /* BaseCoordinator+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077537227F260A300AC46FB /* BaseCoordinator+Test.swift */; };
 		108C743527D299CA0038AE39 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C743427D299CA0038AE39 /* AppCoordinator.swift */; };
 		108C743927D29A400038AE39 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 108C743827D29A400038AE39 /* MainViewController.storyboard */; };
 		108C744727D2A0520038AE39 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C744627D2A0520038AE39 /* Storyboarded.swift */; };
@@ -34,11 +36,12 @@
 		109B1F6A27C285880073F60D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109B1F6827C285880073F60D /* LaunchScreen.storyboard */; };
 		10A925E527E916EA007F531E /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A925E427E916EA007F531E /* UITableView+Utility.swift */; };
 		10A925ED27E920A0007F531E /* MainViewModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A925EC27E920A0007F531E /* MainViewModel+Tests.swift */; };
+		10ACECBA27F3129300D79F1A /* Router+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACECB927F3129300D79F1A /* Router+Test.swift */; };
 		10B013BE27D54237002398D8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B013BD27D54237002398D8 /* DetailViewController.swift */; };
 		10B013C427D54249002398D8 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B013C327D54249002398D8 /* DetailViewController.storyboard */; };
 		10B013CA27D5428D002398D8 /* DetailViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B013C927D5428D002398D8 /* DetailViewCoordinator.swift */; };
 		10CC3E3227D4149B004FD09B /* Network+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC3E3127D4149B004FD09B /* Network+Test.swift */; };
-		10CC3E4227D41A5C004FD09B /* Mock+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC3E4127D41A5C004FD09B /* Mock+Endpoints.swift */; };
+		10CC3E4227D41A5C004FD09B /* Stub+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC3E4127D41A5C004FD09B /* Stub+Endpoints.swift */; };
 		10D637C727E28B5D00CD30A3 /* Coordinator+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D637C627E28B5D00CD30A3 /* Coordinator+Factory.swift */; };
 		10D637CB27E28B6D00CD30A3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D637CA27E28B6D00CD30A3 /* Router.swift */; };
 		10D637D927E29A0800CD30A3 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D637D827E29A0800CD30A3 /* Presentable.swift */; };
@@ -69,6 +72,8 @@
 		105F5A4C27E3AD9C009732D3 /* BaseViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Helpers.swift"; sourceTree = "<group>"; };
 		105F5A5327E3C091009732D3 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		1064465027E7FAFE00E8D78F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		1077536427F25D3300AC46FB /* UserModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserModel+Tests.swift"; sourceTree = "<group>"; };
+		1077537227F260A300AC46FB /* BaseCoordinator+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseCoordinator+Test.swift"; sourceTree = "<group>"; };
 		108C743427D299CA0038AE39 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		108C743827D29A400038AE39 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		108C744627D2A0520038AE39 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -92,11 +97,12 @@
 		109B1F7A27C285980073F60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A925E427E916EA007F531E /* UITableView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		10A925EC27E920A0007F531E /* MainViewModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel+Tests.swift"; sourceTree = "<group>"; };
+		10ACECB927F3129300D79F1A /* Router+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Test.swift"; sourceTree = "<group>"; };
 		10B013BD27D54237002398D8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		10B013C327D54249002398D8 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		10B013C927D5428D002398D8 /* DetailViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCoordinator.swift; sourceTree = "<group>"; };
 		10CC3E3127D4149B004FD09B /* Network+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Test.swift"; sourceTree = "<group>"; };
-		10CC3E4127D41A5C004FD09B /* Mock+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock+Endpoints.swift"; sourceTree = "<group>"; };
+		10CC3E4127D41A5C004FD09B /* Stub+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stub+Endpoints.swift"; sourceTree = "<group>"; };
 		10D637C627E28B5D00CD30A3 /* Coordinator+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinator+Factory.swift"; sourceTree = "<group>"; };
 		10D637CA27E28B6D00CD30A3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		10D637D827E29A0800CD30A3 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
@@ -167,6 +173,40 @@
 				10A925E427E916EA007F531E /* UITableView+Utility.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1077535E27F25C6200AC46FB /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				10FC2A3E27D2CF4900344FF0 /* Dummy+Data.swift */,
+				10FC2A3D27D2CF2F00344FF0 /* Dummy+Data */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		1077536127F25D0300AC46FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1077536427F25D3300AC46FB /* UserModel+Tests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1077536827F2600000AC46FB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				109B1F7A27C285980073F60D /* Info.plist */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1077537127F2607000AC46FB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				108E9B8B27F385E40027F29E /* Router */,
+				108E9B8A27F385D00027F29E /* Coordinator */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		107E08B827E1312D0089EC85 /* Coordinator */ = {
@@ -284,9 +324,9 @@
 		108C747627D2B4D30038AE39 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1077535E27F25C6200AC46FB /* Testing */,
 				105F5A4327E3AD6B009732D3 /* Base */,
 				105F5A5227E3C083009732D3 /* Extension */,
-				10FC2A3D27D2CF2F00344FF0 /* Dummy */,
 				108C747727D2B4DF0038AE39 /* Utilites */,
 			);
 			path = Common;
@@ -298,6 +338,30 @@
 				108C747827D2B4EA0038AE39 /* Constants.swift */,
 			);
 			path = Utilites;
+			sourceTree = "<group>";
+		};
+		108E9B8A27F385D00027F29E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				108E9B8C27F385ED0027F29E /* Core */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		108E9B8B27F385E40027F29E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				10ACECB927F3129300D79F1A /* Router+Test.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		108E9B8C27F385ED0027F29E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1077537227F260A300AC46FB /* BaseCoordinator+Test.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		109B1F5127C285870073F60D = {
@@ -335,10 +399,12 @@
 		109B1F7727C285980073F60D /* guTests */ = {
 			isa = PBXGroup;
 			children = (
-				10A925EA27E92085007F531E /* Scenes */,
+				1077537127F2607000AC46FB /* App */,
+				1077536127F25D0300AC46FB /* Model */,
 				10CC3E3027D41486004FD09B /* Network */,
-				10CC3E2627D41274004FD09B /* Mock+Helper */,
-				109B1F7A27C285980073F60D /* Info.plist */,
+				10A925EA27E92085007F531E /* Scenes */,
+				10CC3E2627D41274004FD09B /* Test+Helper */,
+				1077536827F2600000AC46FB /* Utilities */,
 			);
 			path = guTests;
 			sourceTree = "<group>";
@@ -385,12 +451,12 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		10CC3E2627D41274004FD09B /* Mock+Helper */ = {
+		10CC3E2627D41274004FD09B /* Test+Helper */ = {
 			isa = PBXGroup;
 			children = (
-				10CC3E4127D41A5C004FD09B /* Mock+Endpoints.swift */,
+				10CC3E4127D41A5C004FD09B /* Stub+Endpoints.swift */,
 			);
-			path = "Mock+Helper";
+			path = "Test+Helper";
 			sourceTree = "<group>";
 		};
 		10CC3E3027D41486004FD09B /* Network */ = {
@@ -427,13 +493,12 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
-		10FC2A3D27D2CF2F00344FF0 /* Dummy */ = {
+		10FC2A3D27D2CF2F00344FF0 /* Dummy+Data */ = {
 			isa = PBXGroup;
 			children = (
 				10FC2A3627D2CCED00344FF0 /* git_users_dummy.json */,
-				10FC2A3E27D2CF4900344FF0 /* Dummy+Data.swift */,
 			);
-			path = Dummy;
+			path = "Dummy+Data";
 			sourceTree = "<group>";
 		};
 		62F4A9166C2C32A6E38C12B3 /* Frameworks */ = {
@@ -663,8 +728,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A925ED27E920A0007F531E /* MainViewModel+Tests.swift in Sources */,
-				10CC3E4227D41A5C004FD09B /* Mock+Endpoints.swift in Sources */,
+				10CC3E4227D41A5C004FD09B /* Stub+Endpoints.swift in Sources */,
+				1077536527F25D3300AC46FB /* UserModel+Tests.swift in Sources */,
 				10CC3E3227D4149B004FD09B /* Network+Test.swift in Sources */,
+				10ACECBA27F3129300D79F1A /* Router+Test.swift in Sources */,
+				1077537327F260A300AC46FB /* BaseCoordinator+Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,7 +922,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C4BB468227;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Alamofire/Alamofire.framework/Headers\" \"${SRCROOT}/Pods/Moya/Moya.framework/Headers\" \"${SRCROOT}/Pods/SDWebImage/SDWebImage.framework/Headers\"";
-				INFOPLIST_FILE = guTests/Info.plist;
+				INFOPLIST_FILE = guTests/Utilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -876,7 +944,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C4BB468227;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Alamofire/Alamofire.framework/Headers\" \"${SRCROOT}/Pods/Moya/Moya.framework/Headers\" \"${SRCROOT}/Pods/SDWebImage/SDWebImage.framework/Headers\"";
-				INFOPLIST_FILE = guTests/Info.plist;
+				INFOPLIST_FILE = guTests/Utilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

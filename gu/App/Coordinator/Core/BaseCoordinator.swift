@@ -7,9 +7,9 @@
 
 import Foundation
 
-class BaseCoordinator: Coordinator {
+class BaseCoordinator: BaseCoordinatorProtocol {
     
-    private (set) var childCoordinators = [Coordinator]()
+    private(set) var childCoordinators = [Coordinator]()
     
     func addDependency(_ coordinator: Coordinator) {
         for element in childCoordinators {

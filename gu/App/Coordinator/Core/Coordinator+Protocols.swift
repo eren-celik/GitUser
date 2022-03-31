@@ -7,6 +7,16 @@
 
 import UIKit
 
+typealias ViewCoordinatorProtocol = BaseCoordinator & CoordinatorFinishOutput
+typealias BaseCoordinatorProtocol = CoordinatorCoreProtocol & Coordinator
+
+protocol CoordinatorCoreProtocol {
+    var childCoordinators: [Coordinator] { get }
+    
+    func addDependency(_ coordinator: Coordinator)
+    func removeDependency(_ coordinator: Coordinator?)
+}
+
 protocol Coordinator: AnyObject {
     func start()
     func dismiss()
@@ -15,5 +25,3 @@ protocol Coordinator: AnyObject {
 protocol CoordinatorFinishOutput {
     var finishFlow: (() -> Void)? { get set }
 }
-
-typealias ViewCoordinatorProtocol = BaseCoordinator & CoordinatorFinishOutput 
