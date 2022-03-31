@@ -20,8 +20,13 @@ class DetailViewCoordinator: ViewCoordinatorProtocol {
     
     override func start() {
         let vc = DetailViewController.instantiate()
+        let engine = FirebaseEngine()
+        let manager = AnalyticsManager(engine: engine)
+        
         vc.coordinator = self
         vc.user = user
+        vc.analytics = manager
+        
         self.router.push(vc)
     }
     
