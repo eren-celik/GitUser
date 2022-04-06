@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101082AF27F65F9F00506B43 /* Analytics+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101082AE27F65F9F00506B43 /* Analytics+Event.swift */; };
+		101082B127F65FAE00506B43 /* Analytics+Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101082B027F65FAE00506B43 /* Analytics+Engine.swift */; };
+		101082B327F65FCB00506B43 /* Analytics+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101082B227F65FCB00506B43 /* Analytics+Manager.swift */; };
 		104C2BDD27E20821004FAEA1 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C2BDC27E20821004FAEA1 /* MainViewViewModel.swift */; };
 		104C2BE127E20829004FAEA1 /* MainViewViewModel+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104C2BE027E20829004FAEA1 /* MainViewViewModel+Protocol.swift */; };
 		105F5A1427E3A188009732D3 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105F5A1327E3A188009732D3 /* BaseCoordinator.swift */; };
@@ -64,6 +67,9 @@
 
 /* Begin PBXFileReference section */
 		0D2762E933D12B0CD2A93293 /* Pods-gu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gu.release.xcconfig"; path = "Target Support Files/Pods-gu/Pods-gu.release.xcconfig"; sourceTree = "<group>"; };
+		101082AE27F65F9F00506B43 /* Analytics+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analytics+Event.swift"; sourceTree = "<group>"; };
+		101082B027F65FAE00506B43 /* Analytics+Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analytics+Engine.swift"; sourceTree = "<group>"; };
+		101082B227F65FCB00506B43 /* Analytics+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analytics+Manager.swift"; sourceTree = "<group>"; };
 		104C2BDC27E20821004FAEA1 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		104C2BE027E20829004FAEA1 /* MainViewViewModel+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewViewModel+Protocol.swift"; sourceTree = "<group>"; };
 		105F5A1327E3A188009732D3 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -136,6 +142,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101082AC27F64F2D00506B43 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				101082AD27F64F3800506B43 /* Log Manager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		101082AD27F64F3800506B43 /* Log Manager */ = {
+			isa = PBXGroup;
+			children = (
+				101082AE27F65F9F00506B43 /* Analytics+Event.swift */,
+				101082B027F65FAE00506B43 /* Analytics+Engine.swift */,
+				101082B227F65FCB00506B43 /* Analytics+Manager.swift */,
+			);
+			path = "Log Manager";
+			sourceTree = "<group>";
+		};
 		104C2BDB27E20810004FAEA1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,9 +348,10 @@
 		108C747627D2B4D30038AE39 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1077535E27F25C6200AC46FB /* Testing */,
 				105F5A4327E3AD6B009732D3 /* Base */,
 				105F5A5227E3C083009732D3 /* Extension */,
+				101082AC27F64F2D00506B43 /* Managers */,
+				1077535E27F25C6200AC46FB /* Testing */,
 				108C747727D2B4DF0038AE39 /* Utilites */,
 			);
 			path = Common;
@@ -691,11 +716,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101082B327F65FCB00506B43 /* Analytics+Manager.swift in Sources */,
 				108C748327D2B9980038AE39 /* Network+Contracts.swift in Sources */,
 				108C745D27D2B00C0038AE39 /* UserCell.swift in Sources */,
 				104C2BDD27E20821004FAEA1 /* MainViewViewModel.swift in Sources */,
 				108C747927D2B4EA0038AE39 /* Constants.swift in Sources */,
 				10D637DD27E29A4400CD30A3 /* Router+Contracts.swift in Sources */,
+				101082AF27F65F9F00506B43 /* Analytics+Event.swift in Sources */,
 				105F5A4527E3AD79009732D3 /* BaseViewController.swift in Sources */,
 				108C745227D2AB930038AE39 /* Coordinator+Protocols.swift in Sources */,
 				109B1F6227C285870073F60D /* MainViewController.swift in Sources */,
@@ -704,6 +731,7 @@
 				105F5A4D27E3AD9C009732D3 /* BaseViewController+Helpers.swift in Sources */,
 				109B1F5E27C285870073F60D /* AppDelegate.swift in Sources */,
 				108C747327D2B46F0038AE39 /* Network+Provider.swift in Sources */,
+				101082B127F65FAE00506B43 /* Analytics+Engine.swift in Sources */,
 				10B013CA27D5428D002398D8 /* DetailViewCoordinator.swift in Sources */,
 				1064465127E7FAFE00E8D78F /* UIFont+Extension.swift in Sources */,
 				108C746E27D2B3F00038AE39 /* GitUsers+Model.swift in Sources */,

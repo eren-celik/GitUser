@@ -11,10 +11,15 @@ final class DetailViewController: UIViewController {
     
     weak var coordinator: DetailViewCoordinator?
     var user: GitUser?
+    var analytics: AnalyticsManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = user?.login
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.analytics.log(.detailPageShowed)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -23,4 +28,4 @@ final class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController: Storyboarded {}
+extension DetailViewController: StoryboardInstantiable {}

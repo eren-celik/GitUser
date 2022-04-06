@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: BaseViewController, Storyboarded {
+final class MainViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     weak var coordinator: MainCoordinator?
@@ -46,6 +46,8 @@ final class MainViewController: BaseViewController, Storyboarded {
         return show ? footerView : nil
     }
 }
+
+extension MainViewController: StoryboardInstantiable {}
 
 extension MainViewController: MainViewDelegate {
     
