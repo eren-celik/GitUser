@@ -28,4 +28,4 @@ final class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController: Storyboarded {}
+extension DetailViewController: StoryboardInstantiable {}
