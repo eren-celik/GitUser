@@ -15,4 +15,4 @@ steps:
     script: 'pod install'
 - task: CmdLine@2
   inputs:
-    script: 'xcodebuild test -workspace gu.xcworkspace -scheme gu -destination ''platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'' -enableCodeCoverage YES build test'
+    script: 'xcodebuild test -workspace gu.xcworkspace -scheme gu -destination ''platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2'' -enableCodeCoverage YES build test'
